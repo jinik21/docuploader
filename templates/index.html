@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Doc Uploader</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>Doc Uploader</h1>
+        <h2>Welcome User #{{ totentries.usernum }}</h2>
+        <iframe src={{loc}} width="100%" height="500px"></iframe>
+        <form class='upldform' enctype=multipart/form-data method="POST">
+            <label for="file">Select a file:</label><br><br>
+            <input type="file" id="file" name="file" ><br><br>
+            <input type="Submit" value="upload" name='action'>
+        </form>
+        <h3>{{error}}</h3>
+        <h2>Your Entry Count is {{ entries }}</h2>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <h3>Our Total Uploads till now {{totentries.entries}}</h3>
+    </body>
+</html>
